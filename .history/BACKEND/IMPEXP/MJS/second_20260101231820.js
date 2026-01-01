@@ -11,6 +11,6 @@ function sub(a,b){
     return a-b;
 }
 
-console.log(sub(7,3));
+co
 
 export default sum;
