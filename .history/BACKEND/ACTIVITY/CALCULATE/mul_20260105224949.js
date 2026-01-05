@@ -1,0 +1,2 @@
+
+function mul(a,b)
