@@ -11,7 +11,7 @@ console.log(a);
 
 console.log(sum(10,8));
 
-//this is a sync file untill this get completed next line will not execute
+//this is a sync file 
 const data = fs.readFileSync("./Text.json","utf-8");
 console.log(data);
 
