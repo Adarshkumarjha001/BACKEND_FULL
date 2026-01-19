@@ -9,17 +9,15 @@ const app=express();
 // })
 
 // # make use of ? , + , * , : in the express routes
-// Dynamic route parameters using :
+// Dynamin route parameters using :
 app.use("/about/:id/:name",(req,res)=>{
     console.log(req.params);
     res.send("This is the About Page of Express Server Module");
 })
 
-app.use(/^\/con+tact$/, (req, res) => {
-    res.send("Matched cont+act using regex");
-});
-
-
+app.use("/contact",(req,res)=>{
+    res.send("This is the Contact Page of Express Server Module");
+})
 
 app.use("/",(req,res)=>{
     res.send("Welcome to the Home Page of Express Server Module");

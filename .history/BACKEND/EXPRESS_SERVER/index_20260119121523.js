@@ -15,10 +15,9 @@ app.use("/about/:id/:name",(req,res)=>{
     res.send("This is the About Page of Express Server Module");
 })
 
-app.use(/^\/con+tact$/, (req, res) => {
-    res.send("Matched cont+act using regex");
+app.use("/cont+act", (req, res) => { 
+    res.send("Matched cont+act");
 });
-
 
 
 app.use("/",(req,res)=>{
