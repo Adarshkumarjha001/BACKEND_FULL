@@ -9,7 +9,7 @@ const BOOKSTORE=[
     {id:2,name:"The Hobbit",age:45,description:"A fantasy novel by J.R.R. Tolkien"},
     {id:3,name:"1984",age:29,description:"A dystopian social science fiction novel"},
     {id:4,name:"To Kill a Mockingbird",age:41,description:"A novel by Harper Lee"},
-    {id:5,name:"Harry Porter",age:38,description:"A novel by F. Scott Fitzgerald"}
+    {id:5,name:"The Great Gatsby",age:38,description:"A novel by F. Scott Fitzgerald"}
 ]
 
 app.get("/user",(req,res)=>{
@@ -23,13 +23,6 @@ app.get("/user/:id",(req,res)=>{
     res.send(book);
     // res.send("Ye lijiye");
 })
-
-app.get("/user",(req,res)=>{
-    console.log(req.query);
-    // filter method se humlog array ke andar se specific condition ko match kar sakte hain aur uske basis pe naya array bana sakte hain
-    const BOOK=BOOKSTORE.filter((bk)=>bk.name===req.query.name);
-    res.send(BOOK);
-} )
 
 // YE JO HUMLOG ADD KAR RAHE WOH RAM ME HI STORE HOGA AUR JAB SERVER RESTART HOGA TABH SAB DATA GAYAB HO JAYEGA ISILIYE UPPER 
 // BOOKSTORE KO DATABASE ME STORE KARNA CHAHIYE HAMARA UPPER WALA DATA TOH BAS EXAMPLE KE LIYE HAI WOH CONSOLE HAII BASS  so secondary storage ke liye use kar rahe hain humlog
@@ -60,17 +53,14 @@ app.patch("/user",(req,res)=>{
 })
 
 app.put("/user",(req,res)=>{
-    const idx=BOOKSTORE.find((idx)=>idx.id===req.body.id);
-    // BOOKSTORE[idx]=req.body;
-    idx.name=req.body.name;
-    idx.age=req.body.age;
-    idx.description=req.body.description;
+    const idx=BOOKSTORE.find((idx)=>)
+    BOOKSTORE.name=req.body;
     res.send("Book updated successfully using put method");
 })
 
 app.delete("/user/:id",(req,res)=>{
     const id=parseInt(req.params.id);
-    const index=BOOKSTORE.findIndex((idx)=>idx.id===id);
+    const index=BOOKSTORE.find((idx)=>idx.id===id);
     BOOKSTORE.splice(index,1);
     res.send("Book deleted successfully");
 

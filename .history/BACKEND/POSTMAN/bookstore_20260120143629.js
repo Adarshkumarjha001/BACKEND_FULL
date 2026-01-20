@@ -25,11 +25,9 @@ app.get("/user/:id",(req,res)=>{
 })
 
 app.get("/user",(req,res)=>{
-    console.log(req.query);
-    // filter method se humlog array ke andar se specific condition ko match kar sakte hain aur uske basis pe naya array bana sakte hain
-    const BOOK=BOOKSTORE.filter((bk)=>bk.name===req.query.name);
-    res.send(BOOK);
-} )
+    const BOOK=BOOKSTORE.filter((bk)=>bk.age>30);
+}
+    )
 
 // YE JO HUMLOG ADD KAR RAHE WOH RAM ME HI STORE HOGA AUR JAB SERVER RESTART HOGA TABH SAB DATA GAYAB HO JAYEGA ISILIYE UPPER 
 // BOOKSTORE KO DATABASE ME STORE KARNA CHAHIYE HAMARA UPPER WALA DATA TOH BAS EXAMPLE KE LIYE HAI WOH CONSOLE HAII BASS  so secondary storage ke liye use kar rahe hain humlog

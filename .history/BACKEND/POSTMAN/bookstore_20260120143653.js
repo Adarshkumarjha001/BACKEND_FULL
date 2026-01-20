@@ -25,8 +25,7 @@ app.get("/user/:id",(req,res)=>{
 })
 
 app.get("/user",(req,res)=>{
-    console.log(req.query);
-    // filter method se humlog array ke andar se specific condition ko match kar sakte hain aur uske basis pe naya array bana sakte hain
+    console
     const BOOK=BOOKSTORE.filter((bk)=>bk.name===req.query.name);
     res.send(BOOK);
 } )
