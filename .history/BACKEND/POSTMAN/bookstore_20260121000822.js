@@ -12,20 +12,6 @@ const BOOKSTORE=[
     {id:5,name:"Harry Porter",age:38,description:"A novel by F. Scott Fitzgerald"}
 ]
 
-// app.get("/user",(req,res)=>{
-//     console.log(req.query);
-//     // filter method se humlog array ke andar se specific condition ko match kar sakte hain aur uske basis pe naya array bana sakte hain
-//     const BOOK = BOOKSTORE.filter(
-//         (bk) => bk.name === req.query.name
-//     );
-//     res.send(BOOK);
-// } );
-
-//types of params
-//1. Query Params : http://localhost:4000/user?name=Harry Porter   ye hamesha string k form m hi aayega
-//2. dynamic Params
-//3. Request Body Params : sensitive data ko bhejne ke liye use karte hain jaise password , credit card details etc
-
 app.get("/user",(req,res)=>{
     res.send(BOOKSTORE);
 })
@@ -38,14 +24,14 @@ app.get("/user/:id",(req,res)=>{
     // res.send("Ye lijiye");
 })
 
-// app.get("/user",(req,res)=>{
-//     console.log(req.query);
-//     // filter method se humlog array ke andar se specific condition ko match kar sakte hain aur uske basis pe naya array bana sakte hain
-//     const BOOK = BOOKSTORE.filter(
-//         (bk) => bk.name === req.query.name
-//     );
-//     res.send(BOOK);
-// } );
+app.get("/user",(req,res)=>{
+    console.log(req.query);
+    // filter method se humlog array ke andar se specific condition ko match kar sakte hain aur uske basis pe naya array bana sakte hain
+    const BOOK = BOOKSTORE.filter(
+        (bk) => bk.name === req.query.name
+    );
+    res.send(BOOK);
+} );
 
 // YE JO HUMLOG ADD KAR RAHE WOH RAM ME HI STORE HOGA AUR JAB SERVER RESTART HOGA TABH SAB DATA GAYAB HO JAYEGA ISILIYE UPPER 
 // BOOKSTORE KO DATABASE ME STORE KARNA CHAHIYE HAMARA UPPER WALA DATA TOH BAS EXAMPLE KE LIYE HAI WOH CONSOLE HAII BASS  so secondary storage ke liye use kar rahe hain humlog

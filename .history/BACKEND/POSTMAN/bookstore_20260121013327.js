@@ -22,9 +22,9 @@ const BOOKSTORE=[
 // } );
 
 //types of params
-//1. Query Params : http://localhost:4000/user?name=Harry Porter   ye hamesha string k form m hi aayega
-//2. dynamic Params
-//3. Request Body Params : sensitive data ko bhejne ke liye use karte hain jaise password , credit card details etc
+//1. Query Params
+//2. Route Params
+//3. Request Body Params 
 
 app.get("/user",(req,res)=>{
     res.send(BOOKSTORE);
