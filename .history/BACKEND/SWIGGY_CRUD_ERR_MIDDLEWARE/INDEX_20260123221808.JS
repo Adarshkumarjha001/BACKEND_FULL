@@ -146,7 +146,6 @@ app.post("/user/:id",(req,res)=>{
 // 2 delete from cart
 
 app.delete("/user/:id",(req,res)=>{
-    try{
     const id=parseInt(req.params.id);
     const idx=AddToCart.findIndex((item)=>item.id===id);
     if(idx!==-1){
@@ -156,10 +155,6 @@ app.delete("/user/:id",(req,res)=>{
     else{
         res.status(404).send("Food Item Not Found");
     }
-}
-catch(e){
-    res.status(500).send("Internal Server Error");
-}
 })
 
 // 3 view cart
@@ -177,7 +172,7 @@ app.get("/user",(req,res)=>{
 // handling errors using middleware
 //hume hamesha error ko handle karna chahiye taki agar koii error aaye toh server crash na ho jaye aur user ko proper message mil jaye ki kya error aaya hai
 
-// try catch block se humlog error ko handle kar sakte hain lekin har route me try catch block lagana 
+// try catch block se humlog error ko handle kar sakte hain lekin har route me try catch block lagana bahot tedious kaam hai isliye humlog ek middleware banate hain jo ki error ko handle karega
 
 app.get("/dummy",(req,res)=>{   
     try{

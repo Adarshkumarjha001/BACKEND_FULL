@@ -158,7 +158,7 @@ app.delete("/user/:id",(req,res)=>{
     }
 }
 catch(e){
-    res.status(500).send("Internal Server Error");
+    res
 }
 })
 

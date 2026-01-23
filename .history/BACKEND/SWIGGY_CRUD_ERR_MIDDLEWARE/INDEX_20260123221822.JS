@@ -146,7 +146,6 @@ app.post("/user/:id",(req,res)=>{
 // 2 delete from cart
 
 app.delete("/user/:id",(req,res)=>{
-    try{
     const id=parseInt(req.params.id);
     const idx=AddToCart.findIndex((item)=>item.id===id);
     if(idx!==-1){
@@ -156,10 +155,6 @@ app.delete("/user/:id",(req,res)=>{
     else{
         res.status(404).send("Food Item Not Found");
     }
-}
-catch(e){
-    res.status(500).send("Internal Server Error");
-}
 })
 
 // 3 view cart

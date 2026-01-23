@@ -157,9 +157,7 @@ app.delete("/user/:id",(req,res)=>{
         res.status(404).send("Food Item Not Found");
     }
 }
-catch(e){
-    res.status(500).send("Internal Server Error");
-}
+catch(e)
 })
 
 // 3 view cart
