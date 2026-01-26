@@ -1,0 +1,1 @@
+const uri="mongodb+srv://Adarsh:Adarsh@1308@codeadda.eznvhsy.mongodb.net/?appName=CODEADDA
